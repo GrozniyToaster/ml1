@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+
+\usepackage{fullpage}
+\usepackage{multicol,multirow}
+\usepackage{tabularx}
+\usepackage{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\definecolor{lightcorn}{RGB}{228,160,16}
+
+\usepackage{tikz}  
+\usetikzlibrary{graphs}
+
+\usepackage{hyperref}
+%\usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
+\hypersetup{				% Гиперссылки
+	%	unicode=true,           % русские буквы в раздела PDF
+	%	pdftitle={Заголовок},   % Заголовок
+	%	pdfauthor={Автор},      % Автор
+	%	pdfsubject={Тема},      % Тема
+	%	pdfcreator={Создатель}, % Создатель
+	%	pdfproducer={Производитель}, % Производитель
+	%	pdfkeywords={keyword1} {key2} {key3}, % Ключевые слова
+	colorlinks=true,       	% false: ссылки в рамках; true: цветные ссылки
+	linkcolor=lightcorn,          % внутренние ссылки
+	%	citecolor=green,        % на библиографию
+	%	filecolor=magenta,      % на файлы
+	urlcolor=blue           % на URL
+}
+
+\definecolor{lightgray}{gray}{0.9}
+\usepackage{minted}
+
+
+\setminted[]{
+	breaklines=true,
+	tabsize=2,
+	mathescape,
+	frame=lines,
+	framesep=2mm,
+	bgcolor=lightgray,
+	fontsize=\footnotesize,
+	baselinestretch=1.1,
+	numbers=left,
+	linenos
+}
+
+
+
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection.}{0.3em}{}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection.}{0.3em}{}
+
+\titlespacing{\section}{0pt}{*2}{*2}
+\titlespacing{\subsection}{0pt}{*1}{*1}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\usepackage{listings}
+\lstloadlanguages{Lisp}
+\lstset{extendedchars=false,
+	breaklines=true,
+	breakatwhitespace=true,
+	keepspaces = true,
+	tabsize=2
+}
+\begin{document}
+
+\begin{center}
+	\Large{\textbf{Отчет по лабораторной работе \textnumero 1 
+		по курсу \\ \guillemotleft Искусственный Интелект\guillemotright}}
+	
+\end{center}
+\begin{flushright}
+
+Студент группы 8О-306 МАИ \textit{Недосеков Иван}, \textnumero 18 по списку \\
+\makebox[7cm]{Контакты: {\tt ivan-nedd@mail.ru} \hfill} \\
+\makebox[7cm]{Работа выполнена: \today \hfill} \\
+\ \\
+\makebox[7cm]{Преподаватель: Самиров А. \hfill} \\
+\makebox[7cm]{Отчет сдан: \hfill} \\
+\makebox[7cm]{Итоговая оценка: \hfill} \\
+\makebox[7cm]{Подпись преподавателя: \hfill} \\
+
+\end{flushright}
+
+\section{Тема работы}
+Обработка данных
+
+\section{Цель работы}
+Формально говоря вам предстоит сделать следующее:
+\begin{enumerate}
+\item реализовать следующие алгоритмы машинного обучения: Linear/ Logistic Regression, SVM, KNN, Naive Bayes в отдельных классах
+
+\item Данные классы должны наследоваться от BaseEstimator и ClassifierMixin, иметь методы fit и predict 
+
+\item Вы должны организовать весь процесс предобработки, обучения и тестирования с помощью Pipeline 
+
+\item Вы должны настроить гиперпараметры моделей с помощью кросс валидации, вывести и сохранить эти гиперпараметры в файл, вместе с обученными моделями
+
+\item Проделать аналогично с коробочными решениями
+
+\item Для каждой модели получить оценки метрик:Confusion Matrix, Accuracy, Recall, Precision, ROC\_AUC curve 
+
+\item Проанализировать полученные результаты и сделать выводы о применимости моделей
+
+\item Загрузить полученные гиперпараметры модели и обученные модели в формате pickle на гит вместе с jupyter notebook ваших экспериментов
+
+\end{enumerate}
+
+\section{Ход решения}
+
+Гуглил как реализуют модели и сравнивал с реализациями из коробки. Так как датасет несбалансированны, то некоторые модели давали не очень хороше результаты.
+\section{Выводы}
+По результатам видно, что наивный баес и knn показывают неплохие результаты, но knn переобучился. Собственные модели в некоторых случаях показывают достойный результат по сравнению с моделями из коробки.
+\end{document}
